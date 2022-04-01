@@ -17,9 +17,11 @@ const DEFAULT_SETTINGS: AsciiDocBlocksSettings = {
 export default class AsciiDocBlocks extends Plugin {
     settings: AsciiDocBlocksSettings;
     postprocessors: Map<string, MarkdownPostProcessor> = new Map();
+    asciidoctor: any;
 
     async onload() {
         console.log("Obsidian AsciiDoc Blocks loaded");
+        this.asciidoctor = require("asciidoctor")();
         await this.loadSettings();
         this.app.workspace.onLayoutReady(async () => {
             const processor = this.registerMarkdownCodeBlockProcessor(
@@ -42,32 +44,8 @@ export default class AsciiDocBlocks extends Plugin {
 
         try {
             const html = createEl("div");
-            // TODO: Temporary hard coded result
-            html.innerHTML = `
-            <table class="tableblock frame-none grid-none data-line-2" style="width: 20%;">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 16.6666%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2 × 1</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">=</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2 × 2</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">=</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">4</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-center valign-top"><p class="tableblock">2 × 3</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">=</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">6</p></td>
-</tr>
-</tbody>
-</table>`;
+            const output = this.asciidoctor.convert(src);
+            html.innerHTML = output;
 
             /**
              * Replace the <pre> tag with asciidoc output.
@@ -75,8 +53,8 @@ export default class AsciiDocBlocks extends Plugin {
             const parent = el.parentElement;
             if (parent) {
                 parent.addClass(
-                    "asciidoc-block-parent",
-                    `asciidoc-block-${type.replace("asciidoc-", "")}-parent`
+                    "asciidoc-blocks-parent",
+                    `asciidoc-blocks-${type.replace("asciidoc-", "")}-parent`
                 );
             }
             el.replaceWith(html);

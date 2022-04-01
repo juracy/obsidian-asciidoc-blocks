@@ -1,0 +1,125 @@
+.asciidoc-blocks-parent p.tableblock:last-child {
+    margin-bottom: 0
+}
+
+.asciidoc-blocks-parent td.tableblock>.content {
+    margin-bottom: 1.25em;
+    word-wrap: anywhere
+}
+
+.asciidoc-blocks-parent td.tableblock>.content>:last-child {
+    margin-bottom: -1.25em
+}
+
+.asciidoc-blocks-parent table.tableblock,
+th.tableblock,
+td.tableblock {
+    border: 0 solid #dedede
+}
+
+.asciidoc-blocks-parent table.grid-all>*>tr>* {
+    border-width: 1px
+}
+
+.asciidoc-blocks-parent table.grid-cols>*>tr>* {
+    border-width: 0 1px
+}
+
+.asciidoc-blocks-parent table.grid-rows>*>tr>* {
+    border-width: 1px 0
+}
+
+.asciidoc-blocks-parent table.frame-all {
+    border-width: 1px
+}
+
+.asciidoc-blocks-parent table.frame-ends {
+    border-width: 1px 0
+}
+
+.asciidoc-blocks-parent table.frame-sides {
+    border-width: 0 1px
+}
+
+.asciidoc-blocks-parent table.frame-none>colgroup+*>:first-child>*,
+table.frame-sides>colgroup+*>:first-child>* {
+    border-top-width: 0
+}
+
+.asciidoc-blocks-parent table.frame-none>:last-child>:last-child>*,
+table.frame-sides>:last-child>:last-child>* {
+    border-bottom-width: 0
+}
+
+.asciidoc-blocks-parent table.frame-none>*>tr>:first-child,
+table.frame-ends>*>tr>:first-child {
+    border-left-width: 0
+}
+
+.asciidoc-blocks-parent table.frame-none>*>tr>:last-child,
+table.frame-ends>*>tr>:last-child {
+    border-right-width: 0
+}
+
+.asciidoc-blocks-parent table.stripes-all>*>tr,
+table.stripes-odd>*>tr:nth-of-type(odd),
+table.stripes-even>*>tr:nth-of-type(even),
+table.stripes-hover>*>tr:hover {
+    background: #f8f8f7
+}
+
+.asciidoc-blocks-parent th.halign-left,
+td.halign-left {
+    text-align: left
+}
+
+.asciidoc-blocks-parent th.halign-right,
+td.halign-right {
+    text-align: right
+}
+
+.asciidoc-blocks-parent th.halign-center,
+td.halign-center {
+    text-align: center
+}
+
+.asciidoc-blocks-parent th.valign-top,
+td.valign-top {
+    vertical-align: top
+}
+
+.asciidoc-blocks-parent th.valign-bottom,
+td.valign-bottom {
+    vertical-align: bottom
+}
+
+.asciidoc-blocks-parent th.valign-middle,
+td.valign-middle {
+    vertical-align: middle
+}
+
+.asciidoc-blocks-parent table thead th,
+table tfoot th {
+    font-weight: bold
+}
+
+.asciidoc-blocks-parent tbody tr th {
+    background: #f7f8f7
+}
+
+.asciidoc-blocks-parent tbody tr th,
+tbody tr th p,
+tfoot tr th,
+tfoot tr th p {
+    color: rgba(0, 0, 0, .8);
+    font-weight: bold
+}
+
+.asciidoc-blocks-parent p.tableblock>code:only-child {
+    background: none;
+    padding: 0
+}
+
+.asciidoc-blocks-parent p.tableblock {
+    font-size: 1em
+}
