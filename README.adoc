@@ -1,0 +1,39 @@
+= Obsidian AsciiDoc Blocks Plugin
+
+This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on tables*. 'Cause markdown tables are so _silly_.
+
+== Examples
+
+=== Headerless table (without grid and frames)
+
+[source]
+--
+```asciidoc-table
+[frame="none",grid="none",width=20%,cols="^3,^1,^2"]
+|===
+| 2 × 1 | = | 2
+| 2 × 2 | = | 4
+| 2 × 3 | = | 6
+|===
+
+```
+--
+
+Result:
+
+[frame="none",grid="none",width=20%,cols="^3,^1,^2"]
+|===
+| 2 × 1 | = | 2
+| 2 × 2 | = | 4
+| 2 × 3 | = | 6
+|===
+
+[TIP]
+For more information about https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/[AsciiDoc Tables].
+
+
+== Thanks
+
+The first inspiration (and some code) came from https://github.com/valentine195/obsidian-admonition[Obsidian Admonition], thanks @valentine195.
+
+
