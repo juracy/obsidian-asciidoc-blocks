@@ -1,6 +1,7 @@
 = Obsidian AsciiDoc Blocks Plugin
 
-This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on tables*. 'Cause markdown tables are so _silly_.
+[.lead]
+This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on tables*. 'Cause markdown tables are so limited!
 
 == Examples
 
@@ -28,8 +29,40 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 | image:images/multiplication-table.png[]
 |===
 
+=== CSV Table
+
+[cols="a,a"]
+|===
+| Markdown
+| Result
+
+|
+[source]
+----
+```asciidoc-table
+[%header,format=csv]
+\|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+\|===
+
+```
+----
+
+| image:images/csv-table.png[]
+|===
+
+
 [TIP]
 For more information about https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/[AsciiDoc Tables].
+
+== IMPORTANT
+
+At the moment any AsciiDoc feature might work, but there isn't any warranty and support! I hope in the future I could support other features officially!
+
+[WARNING]
+Maybe I'll restrain `asciidoc-table` for only support tables and create another unsupported block: `asciidoc-raw`.
 
 
 == Thanks
