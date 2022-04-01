@@ -53,6 +53,37 @@ The Lumineers,Ho Hey,Folk Rock
 | image:images/csv-table.png[]
 |===
 
+=== Span lines and columns
+
+[cols="a,a"]
+|===
+| Markdown
+| Result
+
+|
+[source]
+----
+```asciidoc-table
+\|===
+\| Column 1 \| Column 2 \| Column 3
+
+3+\| colspan="2" - full line
+
+.2+\| rowspan="2" - two lines
+\| Line 2 - Column 2
+\| Line 2 - Column 3
+\| Line 3 - Column 2
+\| Line 3 - Column 3
+
+\| Line 4 - Column 1
+2.2+\| rowspan="2" colspan="2" - two lines and two columns
+\| Line 5 - Column 1
+\|===
+```
+----
+
+| image:images/span-table.png[]
+|===
 
 [TIP]
 For more information about https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/[AsciiDoc Tables].
@@ -67,6 +98,5 @@ Maybe I'll restrain `asciidoc-table` for only support tables and create another 
 
 == Thanks
 
-The first inspiration (and some code) came from https://github.com/valentine195/obsidian-admonition[Obsidian Admonition], thanks @valentine195.
-
-
+* The first inspiration (and some code) came from https://github.com/valentine195/obsidian-admonition[Obsidian Admonition], thanks @valentine195;
+* So many thanks, @francbreno for introducing me to Obsidian and spending some time discussing the idea of this plugin.
