@@ -1,10 +1,10 @@
 {
-	"id": "obsidian-sample-plugin",
-	"name": "Sample Plugin",
+	"id": "obsidian-asciidoc-blocks",
+	"name": "AsciiDoc Blocks Plugin",
 	"version": "1.0.1",
 	"minAppVersion": "0.12.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
+	"description": "A plugin to render asciidoc blocks in Obsidian, initially asciidoc tables.",
+	"author": "Juracy Filho",
+	"authorUrl": "https://github.com/juracy/obsidian-asciidoc-blocks",
 	"isDesktopOnly": false
 }
