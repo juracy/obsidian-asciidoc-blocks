@@ -6,26 +6,26 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 
 === Headerless table (without grid and frames)
 
+
+[cols="a,a"]
+|===
+| Markdown
+| Result
+
+|
 [source]
---
+----
 ```asciidoc-table
-[frame="none",grid="none",width=20%,cols="^3,^1,^2"]
-|===
-| 2 × 1 | = | 2
-| 2 × 2 | = | 4
-| 2 × 3 | = | 6
-|===
-
+[frame="none",grid="none",cols="^3,^1,^2"]
+\|===
+\| 2 × 1 \| = \| 2
+\| 2 × 2 \| = \| 4
+\| 2 × 3 \| = \| 6
+\|===
 ```
---
+----
 
-Result:
-
-[frame="none",grid="none",width=20%,cols="^3,^1,^2"]
-|===
-| 2 × 1 | = | 2
-| 2 × 2 | = | 4
-| 2 × 3 | = | 6
+| image:images/multiplication-table.png[]
 |===
 
 [TIP]
