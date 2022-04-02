@@ -1,5 +1,11 @@
 = Obsidian AsciiDoc Blocks Plugin
-:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
 
 [.lead]
 This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on tables*. 'Cause markdown tables are so limited!
