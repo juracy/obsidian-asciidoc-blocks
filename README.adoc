@@ -1,4 +1,5 @@
 = Obsidian AsciiDoc Blocks Plugin
+:icons: font
 
 [.lead]
 This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on tables*. 'Cause markdown tables are so limited!
