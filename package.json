@@ -18,6 +18,8 @@
 		"builtin-modules": "^3.2.0",
 		"esbuild": "0.13.12",
 		"obsidian": "latest",
+		"rexreplace": "^7.0.7",
+		"rollup": "^2.70.1",
 		"tslib": "2.3.1",
 		"typescript": "4.4.4"
 	},
