@@ -21,7 +21,7 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 | Result
 
 |
-[source]
+[source%wrap]
 ----
 ```asciidoc-table
 [frame="none",grid="none",cols="^3,^1,^2"]
@@ -44,7 +44,7 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 | Result
 
 |
-[source]
+[source%wrap]
 ----
 ```asciidoc-table
 [%header,format=csv]
@@ -68,7 +68,7 @@ The Lumineers,Ho Hey,Folk Rock
 | Result
 
 |
-[source]
+[source%wrap]
 ----
 ```asciidoc-table
 \|===
