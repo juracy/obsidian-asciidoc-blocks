@@ -15,7 +15,7 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 === Headerless table (without grid and frames)
 
 
-[cols="a,a"]
+[cols="1a,1a"]
 |===
 | Markdown
 | Result
@@ -38,7 +38,7 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 
 === CSV Table
 
-[cols="a,a"]
+[cols="1a,1a"]
 |===
 | Markdown
 | Result
@@ -62,7 +62,7 @@ The Lumineers,Ho Hey,Folk Rock
 
 === Span lines and columns
 
-[cols="a,a"]
+[cols="1a,1a"]
 |===
 | Markdown
 | Result
@@ -74,7 +74,7 @@ The Lumineers,Ho Hey,Folk Rock
 \|===
 \| Column 1 \| Column 2 \| Column 3
 
-3+\| colspan="2" - full line
+3+\| colspan="3" - full line
 
 .2+\| rowspan="2" - two lines
 \| Line 2 - Column 2
