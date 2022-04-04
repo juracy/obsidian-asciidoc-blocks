@@ -1,4 +1,5 @@
 = Obsidian AsciiDoc Blocks Plugin
+:prewrap:
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
@@ -21,10 +22,10 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 | Result
 
 |
-[source%wrap]
+[source]
 ----
 ```asciidoc-table
-[frame="none",grid="none",cols="^3,^1,^2"]
+[frame="none", grid="none", cols="^3,^1,^2"]
 \|===
 \| 2 × 1 \| = \| 2
 \| 2 × 2 \| = \| 4
@@ -44,14 +45,14 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially *focused on ta
 | Result
 
 |
-[source%wrap]
+[source]
 ----
 ```asciidoc-table
-[%header,format=csv]
+[%header, format=csv]
 \|===
-Artist,Track,Genre
-Baauer,Harlem Shake,Hip Hop
-The Lumineers,Ho Hey,Folk Rock
+Artist, Track, Genre
+Baauer, Harlem Shake, Hip Hop
+The Lumineers, Ho Hey, Folk Rock
 \|===
 
 ```
@@ -68,7 +69,7 @@ The Lumineers,Ho Hey,Folk Rock
 | Result
 
 |
-[source%wrap]
+[source]
 ----
 ```asciidoc-table
 \|===
