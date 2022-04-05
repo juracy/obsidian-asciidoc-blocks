@@ -11,15 +11,11 @@ export default class AsciiDocBlocks extends Plugin {
     async onload() {
         console.log("Obsidian AsciiDoc Blocks loaded");
         this.asciidoctor = require("asciidoctor")();
-        this.app.workspace.onLayoutReady(async () => {
-            const processor = this.registerMarkdownCodeBlockProcessor(
-                "asciidoc-table",
-                (src, el, ctx) =>
-                    this.postprocessor("asciidoc-table", src, el, ctx)
-            );
-            this.postprocessors.set("asciidoc-table", processor);
-            // TODO: Command?
-        });
+        const processor = this.registerMarkdownCodeBlockProcessor(
+            "asciidoc-table",
+            (src, el, ctx) => this.postprocessor("asciidoc-table", src, el, ctx)
+        );
+        this.postprocessors.set("asciidoc-table", processor);
     }
 
     async postprocessor(
