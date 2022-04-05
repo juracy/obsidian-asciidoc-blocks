@@ -1,3 +1,4 @@
+import asciidoctor from "@asciidoctor/core";
 import {
     MarkdownPostProcessor,
     MarkdownPostProcessorContext,
@@ -6,11 +7,13 @@ import {
 
 export default class AsciiDocBlocks extends Plugin {
     postprocessors: Map<string, MarkdownPostProcessor> = new Map();
-    asciidoctor: any;
+    // TODO: Research about @asciidoctor/core types
+    converter: any;
 
     async onload() {
         console.log("Obsidian AsciiDoc Blocks loaded");
-        this.asciidoctor = require("asciidoctor")();
+        this.converter = asciidoctor();
+
         const processor = this.registerMarkdownCodeBlockProcessor(
             "asciidoc-table",
             (src, el, ctx) => this.postprocessor("asciidoc-table", src, el, ctx)
@@ -28,8 +31,8 @@ export default class AsciiDocBlocks extends Plugin {
 
         try {
             const html = createEl("div");
-            const output = this.asciidoctor.convert(src);
-            html.innerHTML = output;
+            const output = this.converter.convert(src);
+            html.innerHTML = output.toString();
 
             /**
              * Replace the <pre> tag with asciidoc output.
