@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.0.2] (2022-04-05)
+## [1.0.2](https://github.com/juracy/obsidian-asciidoc-blocks/compare/1.0.1...1.0.2) (2022-04-05)
 
 ### Improvements
 
@@ -11,7 +11,7 @@ All notable changes to this project will be documented in this file.
 -   Removing onLayoutReady
 -   Removing unused settings
 
-## [1.0.1] (2022-04-02)
+## [1.0.1](https://github.com/juracy/obsidian-asciidoc-blocks/compare/1.0.0...1.0.1) (2022-04-02)
 
 ### Features
 
@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 -   Explicit support for tables only `asciidoc-table`
 -   Several examples in README.adoc
 
-### [1.0.0]
+### 1.0.0
 
 ### Features
 
