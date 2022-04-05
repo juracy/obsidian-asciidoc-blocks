@@ -1,5 +1,6 @@
 import asciidoctor from "@asciidoctor/core";
 import {
+    sanitizeHTMLToDom,
     MarkdownPostProcessor,
     MarkdownPostProcessorContext,
     Plugin,
@@ -32,7 +33,7 @@ export default class AsciiDocBlocks extends Plugin {
         try {
             const html = createEl("div");
             const output = this.converter.convert(src);
-            html.innerHTML = output.toString();
+            html.appendChild(sanitizeHTMLToDom(output.toString()));
 
             /**
              * Replace the <pre> tag with asciidoc output.
