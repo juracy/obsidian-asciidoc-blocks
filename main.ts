@@ -4,25 +4,13 @@ import {
     Plugin,
 } from "obsidian";
 
-// Remember to rename these classes and interfaces!
-
-interface AsciiDocBlocksSettings {
-    mySetting: string;
-}
-
-const DEFAULT_SETTINGS: AsciiDocBlocksSettings = {
-    mySetting: "default",
-};
-
 export default class AsciiDocBlocks extends Plugin {
-    settings: AsciiDocBlocksSettings;
     postprocessors: Map<string, MarkdownPostProcessor> = new Map();
     asciidoctor: any;
 
     async onload() {
         console.log("Obsidian AsciiDoc Blocks loaded");
         this.asciidoctor = require("asciidoctor")();
-        await this.loadSettings();
         this.app.workspace.onLayoutReady(async () => {
             const processor = this.registerMarkdownCodeBlockProcessor(
                 "asciidoc-table",
@@ -79,16 +67,4 @@ export default class AsciiDocBlocks extends Plugin {
     }
 
     onunload() {}
-
-    async loadSettings() {
-        this.settings = Object.assign(
-            {},
-            DEFAULT_SETTINGS,
-            await this.loadData()
-        );
-    }
-
-    async saveSettings() {
-        await this.saveData(this.settings);
-    }
 }
