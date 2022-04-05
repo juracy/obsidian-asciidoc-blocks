@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2] (2022-04-05)
+
+### Improvements
+
+-   Replace innerHTML by sanitizeHTMLToDom
+-   Better import of @asciidoctor/core instead of require
+-   Removing onLayoutReady
+-   Removing unused settings
+
 ## [1.0.1] (2022-04-02)
 
 ### Features

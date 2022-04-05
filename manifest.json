@@ -1,10 +1,10 @@
 {
-	"id": "obsidian-asciidoc-blocks",
-	"name": "AsciiDoc Blocks Plugin",
-	"version": "1.0.1",
-	"minAppVersion": "0.12.0",
-	"description": "A plugin to render asciidoc blocks in Obsidian, initially asciidoc tables.",
-	"author": "Juracy Filho",
-	"authorUrl": "https://github.com/juracy/obsidian-asciidoc-blocks",
-	"isDesktopOnly": false
+    "id": "obsidian-asciidoc-blocks",
+    "name": "AsciiDoc Blocks Plugin",
+    "version": "1.0.2",
+    "minAppVersion": "0.12.0",
+    "description": "A plugin to render asciidoc blocks in Obsidian, initially asciidoc tables.",
+    "author": "Juracy Filho",
+    "authorUrl": "https://github.com/juracy/obsidian-asciidoc-blocks",
+    "isDesktopOnly": false
 }
