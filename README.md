@@ -4,7 +4,67 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially **focused on t
 
 ## Examples
 
-See examples in [README.adoc](README.adoc). There are some examples unsupported in basic markdown markup.
+### Headerless table (without grid and frames)
+
+#### Markdown
+
+````markdown
+```asciidoc-table
+[frame="none", grid="none", cols="^3,^1,^2"]
+|===
+| 2 × 1 | = | 2
+| 2 × 2 | = | 4
+| 2 × 3 | = | 6
+|===
+```
+````
+
+#### Result
+
+![](images/multiplication-table.png)
+
+### CSV Table
+
+#### Markdown
+
+````markdown
+```asciidoc-table
+[%header, format=csv]
+|===
+Artist, Track, Genre
+Baauer, Harlem Shake, Hip Hop
+The Lumineers, Ho Hey, Folk Rock
+|===
+```
+````
+
+![](images/csv-table.png)
+
+### Span lines and columns
+
+#### Markdown
+
+````markdown
+```asciidoc-table
+|===
+| Column 1 | Column 2 | Column 3
+
+3+| colspan="3" - full line
+
+.2+| rowspan="2" - two lines
+| Line 2 - Column 2
+| Line 2 - Column 3
+| Line 3 - Column 2
+| Line 3 - Column 3
+
+| Line 4 - Column 1
+2.2+| rowspan="2" colspan="2" - two lines and two columns
+| Line 5 - Column 1
+|===
+```
+````
+
+![](images/span-table.png)
 
 For more information about [AsciiDoc Tables](https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/).
 
