@@ -21,7 +21,7 @@ This is a plugin to render AsciiDoc blocks in Obsidian, initially **focused on t
 
 #### Result
 
-![](images/multiplication-table.png)
+![](https://raw.githubusercontent.com/juracy/obsidian-asciidoc-blocks/master/images/multiplication-table.png)
 
 ### CSV Table
 
@@ -38,7 +38,7 @@ The Lumineers, Ho Hey, Folk Rock
 ```
 ````
 
-![](images/csv-table.png)
+![](https://raw.githubusercontent.com/juracy/obsidian-asciidoc-blocks/master/images/csv-table.png)
 
 ### Span lines and columns
 
@@ -64,7 +64,7 @@ The Lumineers, Ho Hey, Folk Rock
 ```
 ````
 
-![](images/span-table.png)
+![](https://raw.githubusercontent.com/juracy/obsidian-asciidoc-blocks/master/images/span-table.png)
 
 For more information about [AsciiDoc Tables](https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/).
 
