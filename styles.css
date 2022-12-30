@@ -1,125 +1,140 @@
-.asciidoc-blocks-parent p.tableblock:last-child {
-    margin-bottom: 0
+/*------------------------------------------------------------------------------------------------*/
+/*  General                                                                                       */
+/*------------------------------------------------------------------------------------------------*/
+
+/* Match standard markdown table paragraph spacing */
+
+.asciidoc-blocks-table-parent td.tableblock > p
+{
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.asciidoc-blocks-parent td.tableblock>.content {
-    margin-bottom: 1.25em;
-    word-wrap: anywhere
+.asciidoc-blocks-table-parent td.tableblock > p:not(:last-of-type)
+{
+  margin-bottom: 1em;
 }
 
-.asciidoc-blocks-parent td.tableblock>.content>:last-child {
-    margin-bottom: -1.25em
+/* Footer font weight (Note: generated HTML produced 'td' instead of 'th') */
+
+.asciidoc-blocks-table-parent tfoot tr > td.tableblock
+{
+  font-weight: var(--table-header-weight);
 }
 
-.asciidoc-blocks-parent table.tableblock,
-th.tableblock,
-td.tableblock {
-    border: 0 solid #dedede
+/*------------------------------------------------------------------------------------------------*/
+/*  Borders                                                                                       */
+/*------------------------------------------------------------------------------------------------*/
+
+/* Theme respecting border color */
+
+.asciidoc-blocks-table-parent table.tableblock
+{
+  border: 0 solid var(--table-border-color);
 }
 
-.asciidoc-blocks-parent table.grid-all>*>tr>* {
-    border-width: 1px
+/* Remove all borders by default */
+
+.asciidoc-blocks-table-parent table.tableblock :is(th.tableblock, td.tableblock)
+{
+  border-width: 0 0;
 }
 
-.asciidoc-blocks-parent table.grid-cols>*>tr>* {
-    border-width: 0 1px
+/* Frames (end) */
+
+.asciidoc-blocks-table-parent :is(table.tableblock.frame-end, table.tableblock.frame-all)
+{
+  border-top-width: var(--table-border-width);
+  border-bottom-width: var(--table-border-width);
 }
 
-.asciidoc-blocks-parent table.grid-rows>*>tr>* {
-    border-width: 1px 0
+/* Frames (sides) */
+
+.asciidoc-blocks-table-parent :is(table.tableblock.frame-sides, table.tableblock.frame-all)
+{
+  border-left-width: var(--table-border-width);
+  border-right-width: var(--table-border-width);
 }
 
-.asciidoc-blocks-parent table.frame-all {
-    border-width: 1px
+/* Grids (rows) */
+
+.asciidoc-blocks-table-parent :is(table.tableblock.grid-rows, table.tableblock.grid-all) > thead:not(:last-child) > tr > th.tableblock, /* thead */
+.asciidoc-blocks-table-parent :is(table.tableblock.grid-rows, table.tableblock.grid-all) > tbody > tr:not(:last-child) > td.tableblock, /* tbody */
+.asciidoc-blocks-table-parent :is(table.tableblock.grid-rows, table.tableblock.grid-all) > tbody:not(:last-child) > tr:last-child > td.tableblock /* tfoot precedent */
+{
+  border-bottom-width: var(--table-border-width);
 }
 
-.asciidoc-blocks-parent table.frame-ends {
-    border-width: 1px 0
+/* Grids (cols) */
+
+.asciidoc-blocks-table-parent :is(table.tableblock.grid-cols, table.tableblock.grid-all) tr > th:not(:last-child), /* header */
+.asciidoc-blocks-table-parent :is(table.tableblock.grid-cols, table.tableblock.grid-all) tr > td:not(:last-child) /* non-header */
+{
+  border-right-width: var(--table-border-width);
 }
 
-.asciidoc-blocks-parent table.frame-sides {
-    border-width: 0 1px
+/*------------------------------------------------------------------------------------------------*/
+/*  Stripes                                                                                       */
+/*------------------------------------------------------------------------------------------------*/
+
+/* Hover */
+
+.asciidoc-blocks-table-parent table.tableblock.stripes-hover tr:hover
+{
+  background: var(--background-secondary);
 }
 
-.asciidoc-blocks-parent table.frame-none>colgroup+*>:first-child>*,
-table.frame-sides>colgroup+*>:first-child>* {
-    border-top-width: 0
+/* Header/footer */
+
+.asciidoc-blocks-table-parent :is(table.tableblock.stripes-even, table.tableblock.stripes-odd, table.tableblock.stripes-all) > :is(thead, tfoot) > tr > :is(th.tableblock, td.tableblock)
+{
+  background: var(--color-base-40);
 }
 
-.asciidoc-blocks-parent table.frame-none>:last-child>:last-child>*,
-table.frame-sides>:last-child>:last-child>* {
-    border-bottom-width: 0
+/* Even */
+
+.asciidoc-blocks-table-parent :is(table.tableblock.stripes-even, table.tableblock.stripes-all) > tbody > tr:nth-child(even) > td.tableblock
+{
+  background: var(--background-secondary);
 }
 
-.asciidoc-blocks-parent table.frame-none>*>tr>:first-child,
-table.frame-ends>*>tr>:first-child {
-    border-left-width: 0
+/* Odd */
+
+.asciidoc-blocks-table-parent :is(table.tableblock.stripes-odd, table.tableblock.stripes-all) > tbody > tr:nth-child(odd) > td.tableblock
+{
+  background: var(--background-secondary);
 }
 
-.asciidoc-blocks-parent table.frame-none>*>tr>:last-child,
-table.frame-ends>*>tr>:last-child {
-    border-right-width: 0
+/*------------------------------------------------------------------------------------------------*/
+/*  Alignment                                                                                     */
+/*------------------------------------------------------------------------------------------------*/
+
+.asciidoc-blocks-table-parent :is(th.tableblock.halign-left, td.tableblock.halign-left)
+{
+  text-align: left;
 }
 
-.asciidoc-blocks-parent table.stripes-all>*>tr,
-table.stripes-odd>*>tr:nth-of-type(odd),
-table.stripes-even>*>tr:nth-of-type(even),
-table.stripes-hover>*>tr:hover {
-    background: #f8f8f7
+.asciidoc-blocks-table-parent :is(th.tableblock.halign-right, td.tableblock.halign-right)
+{
+  text-align: right;
 }
 
-.asciidoc-blocks-parent th.halign-left,
-td.halign-left {
-    text-align: left
+.asciidoc-blocks-table-parent :is(th.tableblock.halign-center, td.tableblock.halign-center)
+{
+  text-align: center;
 }
 
-.asciidoc-blocks-parent th.halign-right,
-td.halign-right {
-    text-align: right
+.asciidoc-blocks-table-parent :is(th.tableblock.valign-top, td.tableblock.valign-top)
+{
+  vertical-align: top;
 }
 
-.asciidoc-blocks-parent th.halign-center,
-td.halign-center {
-    text-align: center
+.asciidoc-blocks-table-parent :is(th.tableblock.valign-bottom, td.tableblock.valign-bottom)
+{
+  vertical-align: bottom;
 }
 
-.asciidoc-blocks-parent th.valign-top,
-td.valign-top {
-    vertical-align: top
-}
-
-.asciidoc-blocks-parent th.valign-bottom,
-td.valign-bottom {
-    vertical-align: bottom
-}
-
-.asciidoc-blocks-parent th.valign-middle,
-td.valign-middle {
-    vertical-align: middle
-}
-
-.asciidoc-blocks-parent table thead th,
-table tfoot th {
-    font-weight: bold
-}
-
-.asciidoc-blocks-parent tbody tr th {
-    background: #f7f8f7
-}
-
-.asciidoc-blocks-parent tbody tr th,
-tbody tr th p,
-tfoot tr th,
-tfoot tr th p {
-    color: rgba(0, 0, 0, .8);
-    font-weight: bold
-}
-
-.asciidoc-blocks-parent p.tableblock>code:only-child {
-    background: none;
-    padding: 0
-}
-
-.asciidoc-blocks-parent p.tableblock {
-    font-size: 1em
+.asciidoc-blocks-table-parent :is(th.tableblock.valign-middle, td.tableblock.valign-middle)
+{
+  vertical-align: middle;
 }
